@@ -2,27 +2,13 @@ let MainContener = document.querySelector('#Body');
 console.log(`dfdf`);
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('/menu/index.html')
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById('menu-placeholder').innerHTML = html;
-        // После загрузки меню подключаем script.js
-        const script = document.createElement('script');
-        script.src = '/menu/script.js';
-        document.body.appendChild(script);
-        //меню
-        let menu = document.querySelector("#MenuFixed");
-
-            
-        setTimeout(() => {
-            menu.classList.add("visible");
-            MainContener.style.transition = `opacity 1s linear`;
-            MainContener.style.opacity = "1";
-            setTimeout(()=>{
-                MainContener.style.transition = `opacity 0.3s linear`;
-            }, 1000);
-        }, 300);
-    });
+    setTimeout(() => {
+        MainContener.style.transition = `opacity 1s linear`;
+        MainContener.style.opacity = "1";
+        setTimeout(()=>{
+            MainContener.style.transition = `opacity 0.3s linear`;
+        }, 1000);
+    }, 300); 
 })
 class Product {
     constructor(id, name, price, image, description) {
