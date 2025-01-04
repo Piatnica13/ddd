@@ -2,13 +2,13 @@ let MainContener = document.querySelector('#Body');
 console.log(`dfdf`);
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('../menu/index.html')
+    fetch('menu/index.html')
     .then(response => response.text())
     .then(html => {
         document.getElementById('menu-placeholder').innerHTML = html;
         // После загрузки меню подключаем script.js
         const script = document.createElement('script');
-        script.src = '../menu/script.js';
+        script.src = 'menu/script.js';
         document.body.appendChild(script);
         //меню
         let menu = document.querySelector("#MenuFixed");
