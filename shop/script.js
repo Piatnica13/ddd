@@ -2,7 +2,7 @@ let MainContener = document.querySelector('#Body');
 console.log(`dfdf`);
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/menu/index.html')
+  fetch('../menu/index.html')
   .then(response => response.text())
   .then(html => {
     document.getElementById('menu-placeholder').innerHTML = html;
