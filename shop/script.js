@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('menu-placeholder').innerHTML = html;
     // После загрузки меню подключаем script.js
     const script = document.createElement('script');
-    script.src = 'menu/script.js';
+    script.src = '/ddd/menu/script.js';
     document.body.appendChild(script);
     //меню
     let menu = document.querySelector("#MenuFixed");
