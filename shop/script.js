@@ -48,7 +48,6 @@ class Product {
         this.name = name;
         this.price = price;
         this.image = image;
-        this.description = description;
     }
 
     // Метод для генерации HTML карточки
@@ -56,10 +55,12 @@ class Product {
         return `
         <div class="product-card">
             <img src="${this.image}" alt="${this.name}" class="product-image">
-            <h2 class="product-title">${this.name}</h2>
-            <p class="product-price">${this.price} ₽</p>
-            <p class="product-description">${this.description}</p>
-            <button class="add-to-cart" onclick="addToCart(${this.id})">Добавить в корзину</button>
+            <h3 class="product-title">${this.name}</h3>
+            <p class="product-price">${this.price} ₸</p>
+            <div class="DivInfo">
+                <img scr = "/ddd/image/menu/sumka.png" class = "Con2Icon">
+                <p class="BthInfo">Подробнее</p>
+            </div>
         </div>
         `;
         }
@@ -67,43 +68,18 @@ class Product {
 
   // Массив товаров
     const products = [
-    new Product(1, "Товар 1", 1500, "", "Описание товара 1"),
-    new Product(2, "Товар 2", 2000, "", "Описание товара 2"),
-    new Product(3, "Товар 3", 1800, "", "Описание товара 3"),
-    new Product(4, "Товар 4", 1500, "", "Описание товара 4"),
-    new Product(5, "Товар 5", 2000, "", "Описание товара 5"),
-    new Product(6, "Товар 6", 1800, "", "Описание товара 6"),
-    new Product(7, "Товар 7", 1500, "", "Описание товара 7"),
-    new Product(8, "Товар 8", 2000, "", "Описание товара 8"),
-    new Product(9, "Товар 9", 1800, "", "Описание товара 9"),
-    new Product(10, "Товар 10", 1500, "", "Описание товара 10"),
-    new Product(11, "Товар 11", 2000, "", "Описание товара 11"),
-    new Product(12, "Товар 12", 1800, "", "Описание товара 12"),
-    new Product(1, "Товар 1", 1500, "", "Описание товара 1"),
-    new Product(2, "Товар 2", 2000, "", "Описание товара 2"),
-    new Product(3, "Товар 3", 1800, "", "Описание товара 3"),
-    new Product(4, "Товар 4", 1500, "", "Описание товара 4"),
-    new Product(5, "Товар 5", 2000, "", "Описание товара 5"),
-    new Product(6, "Товар 6", 1800, "", "Описание товара 6"),
-    new Product(1, "Товар 1", 1500, "", "Описание товара 1"),
-    new Product(2, "Товар 2", 2000, "", "Описание товара 2"),
-    new Product(3, "Товар 3", 1800, "", "Описание товара 3"),
-    new Product(4, "Товар 4", 1500, "", "Описание товара 4"),
-    new Product(5, "Товар 5", 2000, "", "Описание товара 5"),
-    new Product(6, "Товар 6", 1800, "", "Описание товара 6"),
-    new Product(1, "Товар 1", 1500, "", "Описание товара 1"),
-    new Product(2, "Товар 2", 2000, "", "Описание товара 2"),
-    new Product(3, "Товар 3", 1800, "", "Описание товара 3"),
-    new Product(4, "Товар 4", 1500, "", "Описание товара 4"),
-    new Product(5, "Товар 5", 2000, "", "Описание товара 5"),
-    new Product(6, "Товар 6", 1800, "", "Описание товара 6"),
-    new Product(1, "Товар 1", 1500, "", "Описание товара 1"),
-    new Product(2, "Товар 2", 2000, "", "Описание товара 2"),
-    new Product(3, "Товар 3", 1800, "", "Описание товара 3"),
-    new Product(4, "Товар 4", 1500, "", "Описание товара 4"),
-    new Product(5, "Товар 5", 2000, "", "Описание товара 5"),
-    new Product(6, "Товар 6", 1800, "", "Описание товара 6"),
-    // Добавьте остальные 58 товаров
+    new Product(1, "Кулон «Солнце»", 37000, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(2, "Кулон «Крыло»", 37000, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(3, "Кулон «Дерево»", 33500, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(4, "Кулон «Бесконечность»", 28500, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(5, "Кулон «Снежинка»", 39500, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(6, "Кулон «Самолёт»", 46500, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(7, "Кулон «Олимпийские кольца»", 42500, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(8, "Кулон «Роза ветров»", 37500, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(9, "Кулон «Сердце пульс»", 35500, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(10, "Кулон «Корона»", 34500, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(11, "Кулон «Горы»", 33500, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(12, "Кулон «Бриллиант»", 33000, "/ddd/image/imgShop/Product/Sun.jpg"),
     ];
 
   // Генерация карточек товаров

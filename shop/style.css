@@ -1,7 +1,19 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 @media screen and (max-width: 900px) {
     #productGrid{
         grid-template-columns: repeat(3, 33.33%) !important;
         justify-content: stretch !important;
+    }
+}
+@media screen and (max-width: 600px) {
+    .imgs{
+        display: none;
+    }
+    .Con1Text{
+        position: relative !important;
+        width: 100% !important;
     }
 }
 @media screen and (max-width: 500px) {
@@ -17,6 +29,7 @@
     grid-template-columns: repeat(4, 16.66%);
     position: relative;
     justify-content: center;
+    gap: 25px;
 }
 #Body{
     width: 100vw;
@@ -25,10 +38,49 @@
 }
 #PodBody{
     position: relative;
-    top: 165px;
+    top: 100px;
 }
 .product-card{
     display: flex;
     flex-direction: column;
-    align-items: center;
 } 
+.imgs{
+    width: 100vw;
+    max-width: 2000px;
+    height: auto;
+    position: relative;
+    z-index: 10;
+}
+.Contener1{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.Con1Text{
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#Con1GlText{
+    font-size: 1.5rem;
+}
+.Con1DivVtText{
+    max-width: 350px;
+}
+.product-image{
+    width: 100%;
+}
+.Con2Icon{
+    width: 25px;
+    height: 25px;
+}
+.DivInfo{
+    display: flex;
+    flex-direction: row;
+}
