@@ -55,12 +55,14 @@ class Product {
         return `
         <div class="product-card">
             <img src="${this.image}" alt="${this.name}" class="product-image">
-            <h3 class="product-title">${this.name}</h3>
+            <p class="product-title">${this.name}</p>
             <p class="product-price">${this.price} ₸</p>
-            <div class="DivInfo">
-                <img scr = "/ddd/image/menu/sumka.png" class = "Con2Icon">
-                <p class="BthInfo">Подробнее</p>
-            </div>
+            <a href="" style = "color: black">
+                <div class="DivInfo">
+                    <img src = "/ddd/image/menu/sumka.png" class = "Con2Icon" alt = "Сумка">
+                    <p class="BthInfo"><ins>Подробнее</ins></p>
+                </div>
+            </a>
         </div>
         `;
         }
@@ -68,18 +70,18 @@ class Product {
 
   // Массив товаров
     const products = [
-    new Product(1, "Кулон «Солнце»", 37000, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(2, "Кулон «Крыло»", 37000, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(3, "Кулон «Дерево»", 33500, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(4, "Кулон «Бесконечность»", 28500, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(5, "Кулон «Снежинка»", 39500, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(6, "Кулон «Самолёт»", 46500, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(7, "Кулон «Олимпийские кольца»", 42500, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(8, "Кулон «Роза ветров»", 37500, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(9, "Кулон «Сердце пульс»", 35500, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(10, "Кулон «Корона»", 34500, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(11, "Кулон «Горы»", 33500, "/ddd/image/imgShop/Product/Sun.jpg"),
-    new Product(12, "Кулон «Бриллиант»", 33000, "/ddd/image/imgShop/Product/Sun.jpg"),
+    new Product(1, "Кулон «Солнце»", 37000, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(2, "Кулон «Крыло»", 37000, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(3, "Кулон «Дерево»", 33500, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(4, "Кулон «Бесконечность»", 28500, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(5, "Кулон «Снежинка»", 39500, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(6, "Кулон «Самолёт»", 46500, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(7, "Кулон «Олимпийские кольца»", 42500, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(8, "Кулон «Роза ветров»", 37500, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(9, "Кулон «Сердце пульс»", 35500, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(10, "Кулон «Корона»", 34500, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(11, "Кулон «Горы»", 33500, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(12, "Кулон «Бриллиант»", 33000, "/ddd/image/imgShop/Product/Golub.png"),
     ];
 
   // Генерация карточек товаров

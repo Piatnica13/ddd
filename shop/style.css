@@ -1,10 +1,12 @@
 body{
     font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0px;
+    padding: 0px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
     #productGrid{
-        grid-template-columns: repeat(3, 33.33%) !important;
-        justify-content: stretch !important;
+        grid-template-columns: repeat(3, 30%) !important;
+        justify-content: center !important;
     }
 }
 @media screen and (max-width: 600px) {
@@ -44,6 +46,11 @@ body{
     display: flex;
     flex-direction: column;
 } 
+.product-image{
+    width: 100%;
+    background-color: #ffd0d9;
+    border-radius: 3px
+}
 .imgs{
     width: 100vw;
     max-width: 2000px;
@@ -73,14 +80,30 @@ body{
 .Con1DivVtText{
     max-width: 350px;
 }
-.product-image{
-    width: 100%;
-}
 .Con2Icon{
     width: 25px;
     height: 25px;
+    position: relative;
+    top: 10px;
+}
+.BthInfo{
+    position: relative;
+    left: 5px;
+    transition: color 0.3s ease-in-out;
 }
 .DivInfo{
     display: flex;
     flex-direction: row;
+}
+.DivInfo:hover .BthInfo{
+    color: #ff879d;
+}
+#TablMenu{
+    width: 100vw;
+    height: 50px;
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px rgb(237, 208, 208) solid;
 }
