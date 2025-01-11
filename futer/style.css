@@ -1,0 +1,79 @@
+.ContenerLast{
+display: flex; /* Включаем Flexbox */
+justify-content: center; /* Центрирование по горизонтали */
+align-items: center; /* Центрирование по вертикали */
+color: rgb(255, 225, 234);
+background-color: #433739; /* Для примера */
+height: 230px;
+margin: 50px 0px 0px 0px;
+flex-direction: column;
+}
+.ConLastLogo{
+width: 135px;
+}
+#ConLast1{
+font-family: Georgia, 'Times New Roman', Times, serif;
+max-width: 1500px;
+display: flex;
+justify-content: space-around;
+width: 100%; 
+margin: 50px 0px
+}
+.TestImgs{
+min-width: 100px;
+max-width: 500px;
+display: flex;
+align-items: center;
+flex-direction: column;
+flex: 1;
+}
+.TestImgs a{
+    transition: color 0.2s ease-in-out;
+    color: white;
+    text-decoration: none;
+}
+.TestImgs a:hover{
+    color: rgb(255, 225, 234);
+}
+.TestImgs p{
+    font-size: 1.3rem;
+}
+.tet{
+    gap: 8px;
+    width: auto;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+}
+.tet p{
+    margin: 0px 0px 14px 0px;
+}
+.Tests{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #ffd0d9;
+}
+.ConLastMesegIcon{
+    width: 25px;
+}
+.MesegIcons{
+    display: flex;
+    gap: 40px;
+    margin-top: 10px;
+}
+.testtt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color:#fff2f2;
+    border-radius: 8px; 
+    transition: background-color 0.2s ease-in-out;
+}
+.testtt:hover{
+    background-color: #ffd0d9;
+}

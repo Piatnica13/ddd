@@ -1,5 +1,11 @@
 let MainContener = document.querySelector('#Body');
 document.addEventListener("DOMContentLoaded", () => {
+    fetch('/ddd/futer/index.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('futer-block').innerHTML = html;
+    })
+    .catch(error => console.error('Ошибка загрузки futer:', error));
     fetch('/ddd/menu/index.html')
     .then(response => response.text())
     .then(html => {
@@ -19,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 MainContener.style.transition = `opacity 0.3s linear`;
             }, 1000);
         }, 300);
-        
-        const links = document.querySelectorAll("nav a");
+
+        const links = document.querySelectorAll("a");
         links.forEach(link => {
             link.addEventListener("click", (e) => {
                 e.preventDefault(); // Отключаем мгновенный переход
@@ -38,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 600);
             });
         });
+
         script.onload = () => {
             // Этот код выполнится после загрузки script.js
             let ContenerMenu = document.querySelector("#contenerMenu");
@@ -72,6 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
         AOS.init();
     })
     .catch(error => console.error('Ошибка загрузки меню:', error));
+
+
 });
 
 function slider() {

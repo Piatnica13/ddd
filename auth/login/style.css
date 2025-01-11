@@ -9,6 +9,11 @@
         padding: 0rem 0rem !important;
     }
 }
+@media screen and (max-height: 680px) {
+    #Contener{
+        height: 100% !important;
+    }
+}
 body{
     margin: 0px;
     padding: 0px;
@@ -16,7 +21,7 @@ body{
     background: #ffe4e9;
 }
 #Contener{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;

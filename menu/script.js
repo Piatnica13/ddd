@@ -8,40 +8,6 @@ let PodMenuPh = document.querySelector('#PodMenuPh')
 let PodMenu = document.querySelector("#PodMenu");
 let chet = true;
 let checkboxSubmenu1 = document.querySelector("#checkboxx");
-document.addEventListener("DOMContentLoaded", FuncMenu);
-function FuncMenu(){
-    let menu = document.querySelector("#MenuFixed");
-    
-    setTimeout(() => {
-        menu.classList.add("visible");
-        body.style.transition = `opacity 1s linear`;
-        body.style.opacity = "1";
-        setTimeout(()=>{
-            body.style.transition = `opacity 0.3s linear`;
-        }, 1000);
-    }, 300);
-
-    const links = document.querySelectorAll("nav a");
-    links.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault(); // Отключаем мгновенный переход
-            const href = link.getAttribute("href");
-
-            // Прячем меню
-            PodTextPh.style.opacity = `0`;
-            body.style.transition = `opacity 0.6s linear`;
-            body.style.opacity = "0";
-            menu.classList.remove("visible");
-            menu.classList.add("hidden");
-            // Ждем окончания анимации и затем переходим
-            setTimeout(() => {
-                body.style.transition = `opacity 0.3s linear`;
-                window.location.href = href; // Переход на новую страницу
-            }, 600);
-        });
-    });
-};
-//показать или спрятать меню
 
 checkboxSubmenu1.addEventListener('click', () =>{
     divSrtelkaMenu.classList.toggle('open');

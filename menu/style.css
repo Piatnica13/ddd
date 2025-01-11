@@ -12,12 +12,19 @@ body{
   z-index: 1000;
   transform: translateY(-100%);
   transition: transform 1s ease-in-out;
+  display: flex;
+  justify-content: center;
 }
 #MenuFixed.visible {
   transform: translateY(0); /* Показываем меню */
 }
 #MenuFixed.hidden {
   transform: translateY(-165%); /* Прячем меню */
+}
+#PodBody{
+  flex: 1;
+  max-width: 2000px;
+  position: relative;
 }
 @media screen and (min-width: 1920px) {
   #contenerMenu{
@@ -399,7 +406,7 @@ nav ul li{
   background-color: transparent;
   border-left: 7.5px solid transparent;
   border-right: 7.5px solid transparent;
-  border-bottom: 15px solid #ffd0d9;;
+  border-bottom: 15px solid #ffd0d9;
   border-radius: 0;
   position: relative;
   left: 113px;
@@ -415,23 +422,23 @@ nav ul li{
   position: relative;
   color: black;
 }
-.PodRImgs{
-  height: 360px;
-  opacity: 1;
-}
 .PodRDivs{
   position: absolute;
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100%;
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
 }
 .PodRTexts{
+  padding: 80px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
+  text-align: center;
 }
 #PodRInstagram{
   display: flex;

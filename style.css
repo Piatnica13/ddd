@@ -200,6 +200,8 @@ body{
     min-width: 280px;
     width: 300px;
     height: 450px;
+    border-radius: 20px;
+    background-color: #000; 
 }
 .Con4Imgs{
     z-index: 0;
@@ -209,9 +211,16 @@ body{
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.45;
+    opacity: 0.7;
     transition: opacity .2s ease-out;
     border-radius: 20px;
+}
+.Con4Divs:hover .Con4Imgs{
+    opacity: 1;
+}
+.Con4Divs:hover .Con4Text{
+    color: transparent;
+    user-select: none;
 }
 .Con4Text{
     position: relative;
@@ -219,6 +228,8 @@ body{
     margin: 0px 20px;
     z-index: 1;
     text-align: center;
+    color: rgb(255, 225, 234);
+    transition: color 0.2s ease-in-out;
 }
 .Con4TextGl{
     font-size: 2.2rem;
@@ -226,4 +237,43 @@ body{
 .Con4TextVt{
     padding-top: 120px;
     font-size: 1.3rem;    
+}
+.ContenerLast{
+display: flex; /* Включаем Flexbox */
+justify-content: center; /* Центрирование по горизонтали */
+align-items: center; /* Центрирование по вертикали */
+color: rgb(255, 225, 234);
+background-color: #433739; /* Для примера */
+height: auto;
+margin: 50px 0px;
+flex-direction: column;
+}
+.ConLastLogo{
+width: 135px;
+}
+#ConLast1{
+max-width: 1500px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+width: 100%; 
+margin: 50px 0px
+}
+.TestImgs{
+min-width: 100px;
+max-width: 500px;
+display: flex;
+justify-content: center;
+flex: 1;
+}
+.Tests{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #ffd0d9;
+}
+#ConLast2{
+    margin: 50px 0px;
 }

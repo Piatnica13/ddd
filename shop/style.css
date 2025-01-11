@@ -2,6 +2,8 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0px;
     padding: 0px;
+    display: flex;
+    flex-direction: column;
 }
 @media screen and (max-width: 767px) {
     #productGrid{
@@ -12,6 +14,9 @@ body{
 @media screen and (max-width: 600px) {
     .imgs{
         display: none;
+    }
+    #futer-block, #Body{
+        top: 100px;
     }
     .Con1Text{
         position: relative !important;
@@ -26,25 +31,32 @@ body{
     }
 }
 
+#Body{
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    opacity: 0; 
+    display: flex;
+    justify-content: center;
+}
+
+#PodShopBody{
+    max-width: 2000px;
+}
+
 #productGrid{
+    max-width: 2000px;
     display: grid;
     grid-template-columns: repeat(4, 16.66%);
     position: relative;
     justify-content: center;
     gap: 25px;
 }
-#Body{
-    width: 100vw;
-    height: 100%;
-    opacity: 0; 
-}
-#PodBody{
-    position: relative;
-    top: 100px;
-}
 .product-card{
+    position: relative;
     display: flex;
     flex-direction: column;
+    max-height: 566px;
 } 
 .product-image{
     width: 100%;
@@ -59,6 +71,7 @@ body{
     z-index: 10;
 }
 .Contener1{
+    max-width: 2000px;
     width: 100vw;
     height: auto;
     display: flex;
@@ -67,6 +80,7 @@ body{
 .Con1Text{
     position: absolute;
     width: 50%;
+    max-width: 1000px;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     z-index: 11;
@@ -99,11 +113,19 @@ body{
     color: #ff879d;
 }
 #TablMenu{
-    width: 100vw;
+    max-width: 2000px;
     height: 50px;
     margin: 20px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px rgb(237, 208, 208) solid;
+}
+.test{
+    position: relative;
+}
+.product-title{
+    height: 24px;
+    position: relative;
+    margin: 10px 0px 0px 0px;
 }

@@ -2,6 +2,11 @@ let MainContener = document.querySelector('#Body');
 console.log(`dfdf`);
 
 document.addEventListener("DOMContentLoaded", () => {
+  fetch('/ddd/futer/index.html')
+  .then(response => response.text())
+  .then(html =>{
+    document.getElementById('futer-block').innerHTML = html;
+  })
   fetch('/ddd/menu/')
   .then(response => response.text())
   .then(html => {
@@ -40,6 +45,37 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 600);
       });
     });
+    script.onload = () => {
+      // Этот код выполнится после загрузки script.js
+      let ContenerMenu = document.querySelector("#contenerMenu");
+      let Logo = document.querySelector("#logo");
+      let checkBox = document.querySelector("#checkboxMain");
+      checkBox.addEventListener('click', ()=>{
+          if (checkBox.checked && window.scrollY === 0){
+              ContenerMenu.style.backgroundColor = ' #ffe4e9';
+          }
+          else if(!checkBox.checked && window.scrollY === 0){
+              ContenerMenu.style.backgroundColor = 'transparent';
+              Logo.style.backgroundColor = 'transparent';
+          }
+      });
+      const handleScroll = () => {
+          if (window.scrollY === 0) {
+              // Если в начале страницы
+              ContenerMenu.style.backgroundColor = 'transparent';
+              Logo.style.backgroundColor = 'transparent';
+              
+          } else {
+              // Если страница прокручена
+              ContenerMenu.style.backgroundColor = ' #ffe4e9';
+          }
+      };
+      // Отслеживаем скролл
+      window.addEventListener('scroll', handleScroll);
+      
+      // Выполняем функцию сразу, чтобы проверить состояние при загрузке
+      handleScroll();
+  };
   });
 });
 class Product {
@@ -56,13 +92,15 @@ class Product {
         <div class="product-card">
             <img src="${this.image}" alt="${this.name}" class="product-image">
             <p class="product-title">${this.name}</p>
-            <p class="product-price">${this.price} ₸</p>
-            <a href="" style = "color: black">
-                <div class="DivInfo">
-                    <img src = "/ddd/image/menu/sumka.png" class = "Con2Icon" alt = "Сумка">
-                    <p class="BthInfo"><ins>Подробнее</ins></p>
-                </div>
-            </a>
+            <div class="test">
+              <p class="product-price">${this.price} ₸</p>
+              <a href="" style = "color: black">
+                  <div class="DivInfo">
+                      <img src = "/ddd/image/menu/sumka.png" class = "Con2Icon" alt = "Сумка">
+                      <p class="BthInfo"><ins>Подробнее</ins></p>
+                  </div>
+              </a>
+            </div>
         </div>
         `;
         }
@@ -73,7 +111,7 @@ class Product {
     new Product(1, "Кулон «Солнце»", 37000, "/ddd/image/imgShop/Product/Golub.png"),
     new Product(2, "Кулон «Крыло»", 37000, "/ddd/image/imgShop/Product/Golub.png"),
     new Product(3, "Кулон «Дерево»", 33500, "/ddd/image/imgShop/Product/Golub.png"),
-    new Product(4, "Кулон «Бесконечность»", 28500, "/ddd/image/imgShop/Product/Golub.png"),
+    new Product(4, "Кулон «Бес&shy;конеч&shy;ность»", 28500, "/ddd/image/imgShop/Product/Golub.png"),
     new Product(5, "Кулон «Снежинка»", 39500, "/ddd/image/imgShop/Product/Golub.png"),
     new Product(6, "Кулон «Самолёт»", 46500, "/ddd/image/imgShop/Product/Golub.png"),
     new Product(7, "Кулон «Олимпийские кольца»", 42500, "/ddd/image/imgShop/Product/Golub.png"),
