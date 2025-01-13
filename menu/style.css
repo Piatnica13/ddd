@@ -365,9 +365,39 @@ nav ul li{
     width: 300px;
   }
 }
+@media screen and (max-width: 1366px){
+  #strelkaMenuOp{
+    left: 125px;
+  }
+  #strelkaMenuOp.open{
+    left: 125px;
+  }
+  #rihgt{
+    width: 350px;
+  }
+}
 
+@media screen and (max-width: 1024px){
+  #strelkaMenuOp{
+    left: 100px;
+  }
+  #strelkaMenuOp.open{
+    left: 100px;
+  }
+  #left{
+    width: 223px;
+  }
+  #rihgt{
+    width: 223px;
+  }
+}
 @media screen and (max-width: 767px){
-  
+  #left{
+    width: 150px;
+  }
+  #rihgt{
+    width: 150px;
+  }
   .hi{
     display: none;
   }
@@ -417,31 +447,5 @@ nav ul li{
   #rihgt, #left{
     width: 60px;
     gap: 0px;
-  }
-}
-@media screen and (max-width: 1366px){
-  #strelkaMenuOp{
-    left: 125px;
-  }
-  #strelkaMenuOp.open{
-    left: 125px;
-  }
-  #rihgt{
-    width: 350px;
-  }
-}
-
-@media screen and (max-width: 1024px){
-  #strelkaMenuOp{
-    left: 100px;
-  }
-  #strelkaMenuOp.open{
-    left: 100px;
-  }
-  #left{
-    width: 223px;
-  }
-  #rihgt{
-    width: 223px;
   }
 }
