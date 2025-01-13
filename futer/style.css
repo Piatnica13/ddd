@@ -1,60 +1,60 @@
+
 .ContenerLast{
-display: flex; /* Включаем Flexbox */
-justify-content: center; /* Центрирование по горизонтали */
-align-items: center; /* Центрирование по вертикали */
-color: rgb(255, 225, 234);
-background-color: #433739; /* Для примера */
-height: 230px;
-margin: 50px 0px 0px 0px;
-flex-direction: column;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: rgb(255, 225, 234);
+    background-color: #433739; 
+    height: 230px;
+    margin: 50px 0px 0px 0px;
 }
 .ConLastLogo{
-width: 135px;
+    width: 140px;
+}
+.FuterCon1DivImg{
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    padding: 20px 0;
+    border-radius: 12px;
+    background-color: #ffd0d9;
 }
 #ConLast1{
-font-family: Georgia, 'Times New Roman', Times, serif;
-max-width: 1500px;
-display: flex;
-justify-content: space-around;
-width: 100%; 
-margin: 50px 0px
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 1500px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%; 
+    margin: 50px 0px
 }
-.TestImgs{
-min-width: 100px;
-max-width: 500px;
-display: flex;
-align-items: center;
-flex-direction: column;
-flex: 1;
+.FuterBlocks{
+    min-width: 100px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
 }
-.TestImgs a{
+.FuterBlocks a{
     transition: color 0.2s ease-in-out;
     color: white;
     text-decoration: none;
 }
-.TestImgs a:hover{
+.FuterBlocks a:hover{
     color: rgb(255, 225, 234);
 }
-.TestImgs p{
+.FuterBlocks p{
     font-size: 1.3rem;
 }
-.tet{
+.FuterPodBlocks{
     gap: 8px;
     width: auto;
     height: 170px;
     display: flex;
     flex-direction: column;
 }
-.tet p{
+.FuterPodBlocks p{
     margin: 0px 0px 14px 0px;
-}
-.Tests{
-    display: flex;
-    justify-content: center;
-    width: 200px;
-    padding: 20px;
-    border-radius: 12px;
-    background-color: #ffd0d9;
 }
 .ConLastMesegIcon{
     width: 25px;
@@ -64,7 +64,7 @@ flex: 1;
     gap: 40px;
     margin-top: 10px;
 }
-.testtt{
+.FuterCon1DivsIcon{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,6 +74,43 @@ flex: 1;
     border-radius: 8px; 
     transition: background-color 0.2s ease-in-out;
 }
-.testtt:hover{
+.FuterCon1DivsIcon:hover{
     background-color: #ffd0d9;
+}
+@media screen and (max-width: 1000px) {
+    .FuterCon1DivImg{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .ContenerLast{
+        height: auto;
+        position: relative;
+        top: 100px;
+    }
+    #ConLast1{
+        flex-direction: column-reverse;
+        margin: 0px 0;
+    }
+    .FuterBlocks{
+        width: 100%;
+        max-width: none;
+    }
+    .FuterBlockLogoMeseg{
+        display: flex;
+        flex-direction: row;
+    }
+    .MesegIcons{
+        position: absolute;
+        right: 20px;
+        padding: 10px;
+        background-color: #fff2f2;
+        border-radius: 8px;
+    }
+    .FuterCon1DivImg{
+        border-radius: 0px;
+        justify-content: start;
+        padding: 20px 20px;
+    }
+    /*Меню и сабменю*/
 }

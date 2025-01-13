@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         script.onload = () => {
             // Этот код выполнится после загрузки script.js
-            let ContenerMenu = document.querySelector("#contenerMenu");
+            let ContenerMenu = document.querySelector("#MenuFixed");
             let Logo = document.querySelector("#logo");
             let checkBox = document.querySelector("#checkboxMain");
             checkBox.addEventListener('click', ()=>{
