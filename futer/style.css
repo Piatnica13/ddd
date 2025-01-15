@@ -1,4 +1,12 @@
-
+#FuterConLast1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 1500px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%; 
+    align-items: start;
+    margin: 50px 0px;
+}
 .ContenerLast{
     display: flex;
     justify-content: center; 
@@ -18,22 +26,34 @@
     padding: 20px 0;
     border-radius: 12px;
     background-color: #ffd0d9;
+    margin-top: 12px;
 }
-#ConLast1{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    max-width: 1500px;
+.FuterPodListBlocks{
     display: flex;
-    justify-content: space-around;
-    width: 100%; 
-    margin: 50px 0px
+    flex-direction: column;
 }
 .FuterBlocks{
     min-width: 100px;
     max-width: 500px;
     display: flex;
     align-items: center;
+    justify-content: start;
     flex-direction: column;
     flex: 1;
+    position: relative;
+}
+.FuterLineBord::before{
+    content: "";
+    left: 0px;
+    position: absolute; /* Привязываем к правой стороне */ /* Смещаем вверх на половину высоты */
+    width: 2px; /* Толщина борта */
+    top: 25px;
+    height: 150px; /* Общая высота борта (50px вверх и 50px вниз от центра) */
+    background-color: #564749; /* Цвет борта */
+}
+.FuterBlockLogoMeseg{
+    display: flex;
+    flex-direction: column;
 }
 .FuterBlocks a{
     transition: color 0.2s ease-in-out;
@@ -44,14 +64,8 @@
     color: rgb(255, 225, 234);
 }
 .FuterBlocks p{
-    font-size: 1.3rem;
-}
-.FuterPodBlocks{
-    gap: 8px;
-    width: auto;
-    height: 170px;
-    display: flex;
-    flex-direction: column;
+    margin: 12px 0px;
+    font-size: 1.5rem;
 }
 .FuterPodBlocks p{
     margin: 0px 0px 14px 0px;
@@ -77,41 +91,78 @@
 .FuterCon1DivsIcon:hover{
     background-color: #ffd0d9;
 }
+.FuterPodListBlocks{
+    font-size: 1.2rem;
+    gap: 8px
+}
 @media screen and (max-width: 1000px) {
     .FuterCon1DivImg{
         width: 100%;
     }
-}
+    .FuterLineBord::before{
+        content: "";
+        left: 0px;
+        position: absolute; /* Привязываем к правой стороне */ /* Смещаем вверх на половину высоты */
+        width: 0px; /* Толщина борта */
+        top: 25px;
+        height: 150px; /* Общая высота борта (50px вверх и 50px вниз от центра) */
+        background-color: #564749; /* Цвет борта */
+    }
+}   
 @media screen and (max-width: 767px) {
     .ContenerLast{
-        height: auto;
-        position: relative;
-        top: 100px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        color: rgb(255, 225, 234);
+        background-color: #433739; 
+        height: 230px;
+        margin: 50px 0px 0px 0px;
     }
-    #ConLast1{
-        flex-direction: column-reverse;
-        margin: 0px 0;
+    #FuterConLast1{
+        flex-direction: column;
+        margin: 0px
     }
     .FuterBlocks{
+        min-width: 100px;
         width: 100%;
         max-width: none;
-    }
-    .FuterBlockLogoMeseg{
         display: flex;
-        flex-direction: row;
-    }
-    .MesegIcons{
-        position: absolute;
-        right: 20px;
-        padding: 10px;
-        background-color: #fff2f2;
-        border-radius: 8px;
-        gap: 15px;
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
     }
     .FuterCon1DivImg{
-        border-radius: 0px;
+        display: flex;
         justify-content: start;
-        padding: 20px 20px;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 0;
+        background-color: #ffd0d9;
+        margin-top: 0px;
+
     }
-    /*Меню и сабменю*/
+    .MesegIcons{
+        display: flex;
+        position: absolute;
+        gap: 20px;
+        right: 20px;
+        top: 30%;
+        background-color:#fff2f2;
+        border-radius: 8px; 
+    }
+    .FuterCon1DivsIcon{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        background-color:#fff2f2;
+        border-radius: 8px; 
+        transition: background-color 0.2s ease-in-out;
+    }
 }

@@ -361,7 +361,7 @@ nav ul li{
   #contenerMenu{
     width: 100%;
   }
-  #rihgt{
+  #rihgt, #left{
     width: 300px;
   }
 }
@@ -372,7 +372,7 @@ nav ul li{
   #strelkaMenuOp.open{
     left: 125px;
   }
-  #rihgt{
+  #rihgt, #left{
     width: 350px;
   }
 }
