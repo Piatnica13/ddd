@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(response => response.text())
     .then(html => {
         document.getElementById('futer-block').innerHTML = html;
+        const script = document.createElement('script');
+        script.src = '/ddd/futer/script.js';
+        document.body.appendChild(script);
     })
     .catch(error => console.error('Ошибка загрузки futer:', error));
     fetch('/ddd/menu/index.html')
