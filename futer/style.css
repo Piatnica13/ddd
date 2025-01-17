@@ -32,7 +32,6 @@
     min-width: 100px;
     max-width: 500px;
     display: flex;
-    justify-content: start;
     flex-direction: column;
     flex: 1;
     align-items: center;
@@ -41,7 +40,6 @@
 .FuterLineBord{
     padding: 0px 20px;
     align-items: start;
-    
     box-sizing: border-box;
 }
 .FuterLineBord::before{
@@ -98,6 +96,13 @@
     flex-direction: column;
     font-size: 1.2rem;
     gap: 8px;
+}
+.LeftNa50px{
+    position: relative;
+    margin: 0px auto;
+}
+.FuterMarginAuto{
+    margin: 0 auto;
 }
 @media screen and (max-width: 1000px) {
     .FuterCon1DivImg{
@@ -173,8 +178,14 @@
         transition: background-color 0.2s ease-in-out;
     }
     .FuterPodListBlocks{
+        position: relative;
         display: none;
         flex-direction: column;
+        gap: 15px;
+        margin: 20px 0px;
+        overflow: hidden; /* Скрывает содержимое, выходящее за пределы блока */
+        height: 0px; /* Начальная высота */
+        transition: height 0.5s ease-in-out;
     }
     .FuterLineBord::before{
         content: "";
@@ -184,5 +195,12 @@
         top: 0px;
         height: 2px; /* Общая высота борта (50px вверх и 50px вниз от центра) */
         background-color: #564749; /* Цвет борта */
+    }
+    .FuterMarginAuto{
+        margin: 0 0;
+    }
+    .FuterBlocks p{
+        margin: 20px 0px;
+        font-size: 1.5rem;
     }
 }

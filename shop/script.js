@@ -1,5 +1,4 @@
 let MainContener = document.querySelector('#Body');
-console.log(`dfdf`);
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch('/ddd/futer/index.html')
@@ -63,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
       const handleScroll = () => {
-        if (window.scrollY === 0) {
+        if (window.scrollY === 0 && !checkBox.checked) {
           // Если в начале страницы
           ContenerMenu.style.backgroundColor = 'transparent';
           Logo.style.backgroundColor = 'transparent';
@@ -179,7 +178,7 @@ DivFilter.addEventListener('click', () => {
 });
 
 CloseBth.addEventListener('click', () => {
-    BockMenu.style.transform = "translateX(-500px)";
+    BockMenu.style.transform = "translateX(-1000px)";
     BockMenu.style.opacity = "0";
     Darker.style.background = "rgba(0, 0, 0, 0)";
 })

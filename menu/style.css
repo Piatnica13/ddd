@@ -33,17 +33,18 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  top: 80px;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: -20px;
+  justify-content: center;
   overflow: hidden;
   pointer-events: none;
-  height: 0px;
   opacity: 0;
   transition: opacity 0.3s linear, transform 0.3s linear;
   transform: translateY(0px);
 }
 #PodMenuPh.open{
-  opacity: 1;
   transform: translateY(-20px);
 }
 .PodTextPh{
@@ -236,26 +237,6 @@ nav ul li{
   transform-origin: 0% 100%;
   transition: transform 0.4s ease-in-out;
 }
-/*при навидении на бургер меню 1 и 3 линия меняют положение по Y*/
-.nav-container input[type="checkbox"]:hover ~ .hamburger-lines .line1{
-  transform: translateY(-3px);
-}
-
-.nav-container input[type="checkbox"]:hover ~ .hamburger-lines .line3{
-  transform: translateY(3px);
-}
-/*при нажатии 1 и 3 линия меняют свой угол, а 2 исчезает*/
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-  transform: rotate(45deg);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-  transform: scaleY(0);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-  transform: rotate(-45deg);
-}
 /*выпадающее меню с номером*/
 #strelkaMenuOp{
   position: absolute;
@@ -431,10 +412,6 @@ nav ul li{
   }
   #PodMenu{
     display: none;
-  }
-  #PodMenuPh.open{
-    opacity: 1;
-    pointer-events: auto;
   }
   #left{
     gap: 10px;

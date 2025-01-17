@@ -1,5 +1,4 @@
 *{
-    
     margin: 0px;
     padding: 0px;
 }
@@ -7,6 +6,10 @@ body{
     font-family:'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
+}
+
+#menu-placeholder p{
+    margin: 16px 0px;
 }
 
 #Body{
@@ -133,15 +136,21 @@ body{
 
 /*Настройки боковой панели*/
 #BockMenu{
-    transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
-    transform: translateX(-500px);
-    z-index: 1001;
-    position: fixed;
-    max-width: 500px;
+    width: 25%;
+    min-width: 380px;
+    max-width: 750px;
     height: 100%;
-    background-color: #f9d9df;
+    position: relative;
+    background-color: transparent;
     opacity: 0;
+    max-height: 1000px;
     padding: 30px 41px;
+    position: fixed; 
+    transform: translateX(-1000px);
+    z-index: 1001;
+    background-color: #f9d9df;
+    box-sizing: border-box;
+    transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
 }
 #BockMenuTitle{
     position: relative;
@@ -213,6 +222,9 @@ body{
     #productGrid{
         grid-template-columns: repeat(3, 30%);
         justify-content: center;
+    }
+    #BockMenu{
+        width: 100%;
     }
 }
 @media screen and (max-width: 600px) {

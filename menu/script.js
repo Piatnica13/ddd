@@ -1,3 +1,7 @@
+let line1 = document.querySelector(".line1");
+let line2 = document.querySelector(".line2");
+let line3 = document.querySelector(".line3");
+
 let checkboxMain = document.querySelector("#checkboxMain");
 let body = document.querySelector('#Body');
 let MainMenu = document.querySelector('#contenerMenu');
@@ -25,44 +29,51 @@ checkboxSubmenu1.addEventListener('click', () =>{
 });
 PodMenuPh.classList.toggle('open');
 
+
 checkboxMain.addEventListener('click', checkboxmainn) 
 function checkboxmainn(){
     if(chetPodMenu == false){
-        PodMenu.style.height = `360px`;
         chetPodMenu = true;
-        if (window.innerWidth <= 768){
+        if (window.innerWidth <= 767){
             body.style.opacity =  "0";
             interval5 = setTimeout(()=>{
                 PodMenuPh.classList.toggle('open');
+                PodMenuPh.style.opacity = "1";
             }, 200)
-            PodMenuPh.style.height = "auto";
         }
+        else{
+            PodMenu.style.height = `360px`; 
+        }
+        line1.style.transform = "rotate(45deg)";
+        line2.style.transform = "scaleY(0)";
+        line3.style.transform = "rotate(-45deg)";
     }
     else{
         chetPodMenu = false;
         PodMenu.style.height = `0px`;
-        if (window.innerWidth <= 768){
-            PodMenuPh.classList.toggle('open');
+        if (window.innerWidth <= 767){
             body.style.opacity =  "1";
-            let interval4 = setInterval(() =>{
-                PodMenuPh.style.height = "0px";
-                clearInterval(interval4);
-            }, 450)
+            PodMenuPh.classList.toggle('open');
+            PodMenuPh.style.opacity = "0";
         }
+        else{
+            PodMenu.style.height = `0px`; 
+        }
+        line1.style.transform = "rotate(0deg)";
+        line2.style.transform = "scaleY(1)";
+        line3.style.transform = "rotate(0deg)";
+        checkboxMain.checked = false;
     }
 }
 
 function checkWidth() {
-    if (window.innerWidth <= 768) {
-        if(divSrtelkaMenu.classList.toggle('open') == true){
-            console.log(divSrtelkaMenu.classList.toggle('open'));
-        }
-        chetPodMenu = true;
-        checkboxmainn();
-        checkboxMain.checked = false;
-    } 
+    if(checkboxMain.checked == true && window.innerWidth < 767){
+        checkboxMain.cheked = false;
+        checkboxmainn()
+        chetPodMenu = false;
+    }
 }
-checkWidth();
+
 let HoverMenu1 = document.querySelector('#DivNovinki');
 let HoverMenu2 = document.querySelector('#DivBraslets')
 let HoverMenu3 = document.querySelector('#DivIndividual')
@@ -104,6 +115,20 @@ HoverMenu5.addEventListener('mouseover', () =>{
 HoverMenu5.addEventListener('mouseout', () =>{
     MenuDiv5.style.opacity = "0";
 })
+
+checkboxMain.addEventListener('mouseover', () => {
+    if (checkboxMain.checked == false){
+        line1.style.transform = "translateY(-3px)";
+        line3.style.transform = "translateY(3px)";
+    }
+})
+checkboxMain.addEventListener('mouseout', () => {
+    if(checkboxMain.checked == false){
+        line1.style.transform = "translateY(0px)";
+        line3.style.transform = "translateY(0px)";
+    }
+})
+
 
 // Проверка при изменении размера окна
 window.addEventListener('resize', checkWidth);
