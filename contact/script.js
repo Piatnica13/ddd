@@ -1,5 +1,4 @@
 let MainContener = document.querySelector('#Body');
-console.log(`dfdf`);
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch('/ddd/menu/')

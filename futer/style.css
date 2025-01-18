@@ -128,7 +128,7 @@
         align-items: center;
         color: rgb(255, 225, 234);
         background-color: #433739; 
-        height: 230px;
+        height: auto;
         margin: 50px 0px 0px 0px;
     }
     #FuterConLast1{

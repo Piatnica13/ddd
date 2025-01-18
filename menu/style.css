@@ -43,6 +43,7 @@ body{
   opacity: 0;
   transition: opacity 0.3s linear, transform 0.3s linear;
   transform: translateY(0px);
+  z-index: -1;
 }
 #PodMenuPh.open{
   transform: translateY(-20px);

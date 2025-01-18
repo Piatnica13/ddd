@@ -130,39 +130,57 @@ products.forEach(product => {
   productGrid.innerHTML += product.render();
 });
 
-class BockMenuTabs{
-  constructor(MainTabsName, PodTabsName){
-    this.MainTabsName = MainTabsName;
-    this.PodTabsName = PodTabsName;
+class BockMenuTabs {
+  constructor(MainTabsName, PodTabsName, Fid) {
+    this.MainTabsName = MainTabsName; // Название главной вкладки
+    this.PodTabsName = PodTabsName;  // Массив подназваний
+    this.Fid = Fid;                  // Массив ID
   }
-  MenuHtml(){
+
+  MenuHtml() {
     let html = `
-    <div>
-        <p>${this.MainTabsName}</p>
-        <ul class = "Spisok">`
-    this.PodTabsName.forEach((PodName) =>{
-      html += `<li>${PodName}</li>`;
-    })
+      <div class="ShopDivFilters">
+        <p class="ShopFiltersTitle">${this.MainTabsName}</p>
+        <ul class="ShopFiltersDivSpisok">`;
+
+    // Генерация подменю
+    this.PodTabsName.forEach((PodName, index) => {
+      const PodId = this.Fid[index] || index; // Если ID нет, используем индекс
+      html += `
+        <li class="ShopFiltersPodSpisok">
+          <input type="radio" id="FiltersCheckBox${PodId}" name="group_${this.MainTabsName}">
+          <label for="FiltersCheckBox${PodId}" class="ShopFiltersItems">${PodName}</label>
+        </li>`;
+    });
+
     html += `
         </ul>
-    </div>
-    `
+      </div>`;
     return html;
   }
-  renderTabs(){
-    let testttt = document.querySelector("#BockMenuMain");
-    testttt.innerHTML += this.MenuHtml();
+
+  renderTabs() {
+    const BockMenuMain = document.querySelector("#BockMenuMain");
+    if (BockMenuMain) {
+      BockMenuMain.innerHTML += this.MenuHtml();
+    } else {
+      console.error("Элемент #BockMenuMain не найден на странице.");
+    }
   }
 }
 
-let myMenus = [
-  new BockMenuTabs("Концепция", ["Знаки зодиака", "Новый год", "Путешествия"]),
-  new BockMenuTabs("Катигоря", ["Кулон", "Колье", "Бегунок", "Монеточка"]),
-  new BockMenuTabs("Цена", ["28500тг - 40000тг", "40000тг - 64000тг", "64000тг - 173000тг"])
-]
-myMenus.forEach((product) =>{
-  product.renderTabs();
-})
+// Пример использования
+const myMenus = [
+  new BockMenuTabs("Концепция", ["Знаки зодиака", "Новый год", "Путешествия"], [1, 2, 3]),
+  new BockMenuTabs("Категория", ["Кулон", "Колье", "Бегунок", "Монеточка"], [4, 5, 6, 7]),
+  new BockMenuTabs("Цена", ["28500тг - 40000тг", "40000тг - 64000тг", "64000тг - 173000тг"], [8, 9, 10]),
+];
+
+// Рендеринг вкладок
+myMenus.forEach((menu) => {
+  menu.renderTabs();
+});
+
 
 
 
@@ -182,3 +200,16 @@ CloseBth.addEventListener('click', () => {
     BockMenu.style.opacity = "0";
     Darker.style.background = "rgba(0, 0, 0, 0)";
 })
+
+let FiltersHeight = document.querySelector('#FilterHeight');
+FiltersHeight.addEventListener('resize', ReHeight);
+
+function ReHeight() {
+  if(window.innerHeight < 1000){
+    let Height = window.innerHeight;
+    FiltersHeight.style.height = `${Height}px`;
+  }
+}
+ReHeight()
+
+window.addEventListener('resize', ReHeight);

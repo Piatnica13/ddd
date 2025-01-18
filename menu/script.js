@@ -1,3 +1,19 @@
+const links = document.querySelectorAll("a");
+links.forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault(); // Отключаем мгновенный переход
+        const href = link.getAttribute("href");
+        // Прячем меню
+        checkboxMain.cheked = false;
+        checkboxmainn()
+        chetPodMenu = false;
+        // Ждем окончания анимации и затем переходим
+        setTimeout(() => {
+            window.location.href = href; // Переход на новую страницу
+        }, 2600);
+    });
+});
+
 let line1 = document.querySelector(".line1");
 let line2 = document.querySelector(".line2");
 let line3 = document.querySelector(".line3");
@@ -40,6 +56,7 @@ function checkboxmainn(){
                 PodMenuPh.classList.toggle('open');
                 PodMenuPh.style.opacity = "1";
             }, 200)
+            PodMenuPh.style.pointerEvents = "auto";
         }
         else{
             PodMenu.style.height = `360px`; 
@@ -62,6 +79,8 @@ function checkboxmainn(){
         line1.style.transform = "rotate(0deg)";
         line2.style.transform = "scaleY(1)";
         line3.style.transform = "rotate(0deg)";
+        PodMenuPh.style.pointerEvents = "none";
+
         checkboxMain.checked = false;
     }
 }
