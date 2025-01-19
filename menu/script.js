@@ -1,16 +1,18 @@
 const links = document.querySelectorAll("a");
 links.forEach(link => {
     link.addEventListener("click", (e) => {
-        e.preventDefault(); // Отключаем мгновенный переход
-        const href = link.getAttribute("href");
+        if (checkboxMain.checked == true){
+            e.preventDefault(); // Отключаем мгновенный переход
+            const href = link.getAttribute("href");
         // Прячем меню
-        checkboxMain.cheked = false;
-        checkboxmainn()
-        chetPodMenu = false;
+                checkboxMain.cheked = false;
+                checkboxmainn()
+                chetPodMenu = false;
         // Ждем окончания анимации и затем переходим
-        setTimeout(() => {
-            window.location.href = href; // Переход на новую страницу
-        }, 2600);
+            setTimeout(() => {
+                window.location.href = href; // Переход на новую страницу
+            }, 600);
+        }
     });
 });
 

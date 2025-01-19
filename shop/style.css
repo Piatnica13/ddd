@@ -1,8 +1,6 @@
-*{
+body, html{
     margin: 0px;
     padding: 0px;
-}
-body{
     font-family:'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
@@ -19,6 +17,12 @@ body{
     opacity: 0; 
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#futer-block{
+    width: 100%;
 }
 
 #PodShopBody{
@@ -154,7 +158,7 @@ body{
 #BockMenuTitle{
     position: relative;
     width: 100%;
-    height: 10%;
+    height: 100px;
     display: flex;
     justify-content: center;
     font-size: 2rem;
@@ -172,20 +176,21 @@ body{
 }
 #BockMenuMain{
     position: relative;
-    height: 70%;
     width: 100%;
+    flex: 1;
+    overflow: auto;
 }
 #BockMenuDivFuter{
     position: relative;
-    height: 20%;
+    height: 200px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1.4rem;
+    margin: 30px 0px;
 }
 #BockMenuDivButtons{
-    flex: 1;
     display: flex;
     width: 100%;
     height: 100%;
@@ -193,12 +198,16 @@ body{
     align-items: center;
     margin-top: 20px;
     font-size: 1.7rem;
+    flex: 1;
 }
 #BockMenuDivBthShow{
     background-color: #ff879d;
     padding: 20px 30px;
     border-radius: 4px;
     cursor: pointer;
+}
+#BockMenuDivBthShow p{
+    margin: 0px;
 }
 #BockMenuBthSbros{
     color: black;
@@ -217,7 +226,9 @@ body{
     pointer-events: none; /* Отключение взаимодействия */
 }
 #FilterHeight{
-    height: 1000px;
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    height: 100vh; /* Занимает всю высоту экрана */
 }
 /*Фильтры*/
 .ShopDivFilters{
@@ -231,6 +242,7 @@ body{
 }
 .ShopFiltersTitle{
     font-size: 1.7rem;
+    cursor: pointer;
 }
 .ShopFiltersTitle::before{
     content: "";
@@ -243,14 +255,15 @@ body{
 .ShopFiltersDivSpisok{
     display: flex;
     flex-direction: column;
-}
-.ShopFiltersPodSpisok {
+    margin: 0px;
     display: flex;
-    
+    overflow: hidden; /* Скрывает содержимое, выходящее за пределы блока */
+    height: 0px; /* Начальная высота */
+    transition: height 0.5s ease-in-out;
 }
-.ShopFiltersItems{
+.ShopFiltersPodSpisok {}
+.ShopFiltersItems{}
 
-}
 @media screen and (max-width: 1000px) {
     #Body{
         top: 100px;

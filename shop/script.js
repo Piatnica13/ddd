@@ -139,9 +139,11 @@ class BockMenuTabs {
 
   MenuHtml() {
     let html = `
-      <div class="ShopDivFilters">
-        <p class="ShopFiltersTitle">${this.MainTabsName}</p>
-        <ul class="ShopFiltersDivSpisok">`;
+      <div class="ShopDivFilters" >
+        <div id="ShopDivId${this.MainTabsName}">
+          <p class="ShopFiltersTitle">${this.MainTabsName}</p>
+        </div>
+        <ul class="ShopFiltersDivSpisok" id = "ShopPodId${this.MainTabsName}">`;
 
     // Генерация подменю
     this.PodTabsName.forEach((PodName, index) => {
@@ -181,6 +183,41 @@ myMenus.forEach((menu) => {
   menu.renderTabs();
 });
 
+let MainKon = document.querySelector("#ShopDivIdКонцепция")
+let PodKon = document.querySelector("#ShopPodIdКонцепция")
+let ChetKon = false;
+
+MainKon.addEventListener('click', ()=>{
+  ChetKon = !ChetKon;
+  
+  OpenDoors(PodKon, ChetKon);
+});
+
+let MainKat = document.querySelector("#ShopDivIdКатегория")
+let PodKat = document.querySelector("#ShopPodIdКатегория")
+let ChetKat = false;
+
+MainKat.addEventListener('click', () => {
+  ChetKat = !ChetKat;
+  OpenDoors(PodKat, ChetKat);
+})
+
+let MainCena = document.querySelector("#ShopDivIdЦена")
+let PodCena = document.querySelector("#ShopPodIdЦена")
+let ChetCena = false;
+
+MainCena.addEventListener('click', () => {
+  ChetCena = !ChetCena;
+  OpenDoors(PodCena, ChetCena);
+})
+
+
+function OpenDoors(PodName, Chet){
+  
+  PodName.style.height = Chet? PodName.scrollHeight + "px" : "0";
+  
+}
+
 
 
 
@@ -205,7 +242,7 @@ let FiltersHeight = document.querySelector('#FilterHeight');
 FiltersHeight.addEventListener('resize', ReHeight);
 
 function ReHeight() {
-  if(window.innerHeight < 1000){
+  if(window.innerHeight <= 1000){
     let Height = window.innerHeight;
     FiltersHeight.style.height = `${Height}px`;
   }

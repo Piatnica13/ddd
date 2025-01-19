@@ -179,10 +179,10 @@
     }
     .FuterPodListBlocks{
         position: relative;
-        display: none;
+        display: flex;
         flex-direction: column;
         gap: 15px;
-        margin: 20px 0px;
+        margin: 0px 0px;
         overflow: hidden; /* Скрывает содержимое, выходящее за пределы блока */
         height: 0px; /* Начальная высота */
         transition: height 0.5s ease-in-out;
